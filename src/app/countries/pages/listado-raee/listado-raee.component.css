@@ -1,0 +1,16 @@
+.lista{
+  width: 100%;
+}
+
+
+
+
+
+.col {
+  background-color: var(--color5);
+  padding: 10px;
+}
+
+hr {
+  border-color: var(--color1);
+}

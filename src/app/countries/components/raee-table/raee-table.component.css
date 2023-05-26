@@ -1,0 +1,92 @@
+.input-wrapper {
+  position: relative;
+}
+input{
+  height: 4vh;
+  font-size: 2vh;
+  width: 100%;
+  margin-bottom: 2vh;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: transparent;
+  border-color: var(--color1);
+  background-color: var(--color1);
+}
+.input-wrapper input {
+  height: 4vh;
+  font-size: 2vh;
+  width: 190%;
+  margin-bottom: 2vh;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: var(--color1);
+  border-color: var(--color1);
+}
+
+.input-wrapper input:active {
+  border-color: var(--color1);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.tablaGeneral {
+  width: 100%;
+  background-color: var(--color2);
+}
+
+.tablaGeneral th,
+.tablaGeneral .paginator {
+  background-color: var(--color3);
+  color: var(--color1);
+}
+
+.tablaGeneral td,th{
+  text-align: center;
+}
+
+.tablaGeneral .example-element-row td {
+  border-bottom-width: 0;
+}
+
+.tablaGeneral .example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.tablaExpandir {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  border-width: medium;
+}
+
+.tablaExpandir th,
+.tablaExpandir td {
+  border-color: var(--color3);
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  text-align: center;
+
+}
+
+.tablaExpandir th {
+  background-color: var(--color3);
+  color: var(--color1);
+}
+
+.ver-mas {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--color2);
+  color: var(--color3);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.ver-mas:hover {
+  background-color: #0d47a1;
+}
