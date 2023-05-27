@@ -8,6 +8,8 @@ import { MatInput } from '@angular/material/input';
 import { MatSort } from '@angular/material/sort';
 import {merge, Observable, of as observableOf, of} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
+import { RaeeFilterPanelComponent } from '../raee-filter-panel/raee-filter-panel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'raee-table',
@@ -25,6 +27,8 @@ export class RaeeTableComponent implements OnInit, AfterViewInit {
   expandedRaee: Raee | null;
   public ListadoRaee: Raee[] = [];
   public isLoading: boolean = false;
+  public extendfilter:boolean = false;
+  public estadoAnimacion:string = 'collapsed';
 
   resultsLength = 0;
   isLoadingResults = true;
@@ -52,6 +56,14 @@ export class RaeeTableComponent implements OnInit, AfterViewInit {
     };
     this.raeeService.cacheStore.generalFilter = { CodigoEtiqueta: this.input.value };
     this.raeeService.saveToLocalStorage();
+  }
+
+
+  public extendedfilter(){
+    this.extendfilter =!this.extendfilter;
+    this.estadoAnimacion = this.extendfilter ? 'expanded' : 'collapsed';
+
+    console.log(this.extendfilter);
   }
 
   ngOnInit(): void {
@@ -98,7 +110,6 @@ export class RaeeTableComponent implements OnInit, AfterViewInit {
       )
       .subscribe((ListadoRaee: Raee[]) => (this.ListadoRaee = ListadoRaee));
   }
-
 
 
   applyFilter(event: Event) {

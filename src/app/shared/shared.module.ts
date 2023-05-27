@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
-import { SearchBoxComponent } from './components/search-box/search-box.component';
 
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -15,8 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     LoadingSpinnerComponent,
-    SearchBoxComponent,
-   
+
   ],
   imports: [
     CommonModule,
@@ -29,7 +27,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ],
   exports: [
     LoadingSpinnerComponent,
-    SearchBoxComponent,
     MatListModule,
     MatSidenavModule,
     MatIconModule,

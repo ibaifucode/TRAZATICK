@@ -1,8 +1,8 @@
 <!-- INPUT DE BUSQUEDA -->
 <input matInput #filter (keyup)="applyFilter($event)" (keyup)="SaveCache()" placeholder="Codigo de etiqueta" #input>
 <!-- FILTROS DE BUSQUEDA -->
-
-<div class="filtrosdebusqueda">FILTRAR</div>
+<div class="filtrosdebusqueda" (click)="extendedfilter()">FILTRAR</div>
+<app-raee-filter-panel *ngIf="extendfilter" [@detailExpand]="estadoAnimacion"></app-raee-filter-panel>
 
 <!-- PANTALLITA CARGA ABAJO DERECHA -->
 <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>

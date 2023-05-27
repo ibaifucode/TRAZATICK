@@ -14,6 +14,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import{ MatInputModule } from '@angular/material/input';
 import {GoogleMapsModule} from '@angular/google-maps';
+import { RaeeFilterPanelComponent } from './components/raee-filter-panel/raee-filter-panel.component';
 
 
 
@@ -22,7 +23,8 @@ import {GoogleMapsModule} from '@angular/google-maps';
   declarations: [
     ListadoRaeeComponent,
     RaeeProductoComponent,
-    RaeeTableComponent
+    RaeeTableComponent,
+    RaeeFilterPanelComponent
 
 
   ],
