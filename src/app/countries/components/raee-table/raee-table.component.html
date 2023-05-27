@@ -1,5 +1,8 @@
 <!-- INPUT DE BUSQUEDA -->
 <input matInput #filter (keyup)="applyFilter($event)" (keyup)="SaveCache()" placeholder="Codigo de etiqueta" #input>
+<!-- FILTROS DE BUSQUEDA -->
+
+<div class="filtrosdebusqueda">FILTRAR</div>
 
 <!-- PANTALLITA CARGA ABAJO DERECHA -->
 <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
@@ -9,8 +12,8 @@
   No hay registros para mostrar
 </div>
 
-<div class="mat-elevation-z8">
   <!-- TABLA -->
+<div class="mat-elevation-z8">
   <div class="table-wrapper">
     <table mat-table [dataSource]="tableDataSource" multiTemplateDataRows class="tablaGeneral" matSort
       matSortActive="Peso" matSortDisableClear matSortDirection="desc">
