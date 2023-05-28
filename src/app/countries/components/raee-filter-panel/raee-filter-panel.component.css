@@ -9,7 +9,14 @@
   justify-content: space-between;
 }
 
-
+.filtro-titulo{
+  text-align: center;
+  background-color: var(--color3);
+  color: var(--color1);
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;}
 
 .filtro-container {
   display: flex;
@@ -20,6 +27,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-left: 1px solid black;
 }
 
 .filtro-item {
@@ -33,5 +44,14 @@
 }
 
 .label-container {
-  width: 200px; /* Ajusta el ancho según sea necesario */
+  width: 15vw; /* Ajusta el ancho según sea necesario */
+}
+
+input,option,select
+{
+  height: 2.5vh;
+  width: 12vw;
+  font-size: 2vh;
+  background-color: var(--color1);
+  border-color: var(--color1);
 }

@@ -1,11 +1,12 @@
-<div class="filtro-container">
+<div class="filtro-titulo" (click)="filtrolectura = !filtrolectura">Filtrar lecturas</div>
+<div *ngIf="filtrolectura" class="filtro-container">
   <div class="columna">
     <div class="filtro-item">
       <div class="label-container">
-        <label for="codigoEtiqueta">Código de Etiqueta:</label>
+        <label for="fechaLectura">Fecha de Lectura:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="codigoEtiqueta" name="codigoEtiqueta">
+        <input type="text" id="fechaLectura" name="fechaLectura" [(ngModel)]="raeeabuscar.FechaLectura">
       </div>
     </div>
     <div class="filtro-item">
@@ -13,7 +14,9 @@
         <label for="tipoLectura">Tipo de Lectura:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="tipoLectura" name="tipoLectura">
+        <select id="tipoLectura" name="tipoLectura" [(ngModel)]="raeeabuscar.TipoLectura">
+          <option *ngFor="let tipoLectura of getTipoLecturaOptions()" [value]="tipoLectura">{{ tipoLectura }}</option>
+        </select>
       </div>
     </div>
     <div class="filtro-item">
@@ -21,7 +24,43 @@
         <label for="donde">Donde:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="donde" name="donde">
+        <select id="donde" name="donde" [(ngModel)]="raeeabuscar.Donde">
+          <option *ngFor="let donde of getDondeOptions()" [value]="donde">{{ donde }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="filtro-item">
+      <div class="label-container">
+        <label for="region">Región:</label>
+      </div>
+      <div class="input-container">
+        <select id="region" name="region" [(ngModel)]="raeeabuscar.Region">
+          <option *ngFor="let region of getRegionOptions()" [value]="region">{{ region }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="filtro-item">
+      <div class="label-container">
+        <label for="provincia">Provincia:</label>
+      </div>
+      <div class="input-container">
+        <select id="provincia" name="provincia" [(ngModel)]="raeeabuscar.Provincia">
+          <option *ngFor="let provincia of getProvinciaOptions()" [value]="provincia">{{ provincia }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="filtro-titulo" (click)="filtroRAEE = !filtroRAEE">Filtrar RAEE</div>
+<div *ngIf="filtroRAEE" class="filtro-container">
+  <div class="columna">
+    <div class="filtro-item">
+      <div class="label-container">
+        <label for="codigoEtiqueta">Código de Etiqueta:</label>
+      </div>
+      <div class="input-container">
+        <input type="text" id="codigoEtiqueta" name="codigoEtiqueta" [(ngModel)]="raeeabuscar.CodigoEtiqueta">
       </div>
     </div>
     <div class="filtro-item">
@@ -29,7 +68,17 @@
         <label for="tipoRAEE">Tipo de RAEE:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="tipoRAEE" name="tipoRAEE">
+        <select id="tipoRAEE" name="tipoRAEE" [(ngModel)]="raeeabuscar.TipoRAEE">
+          <option *ngFor="let tipoRAEE of getTipoRAEEOptions()" [value]="tipoRAEE">{{ tipoRAEE }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="filtro-item">
+      <div class="label-container">
+        <label for="descripcionResiduo">Descripción del Residuo:</label>
+      </div>
+      <div class="input-container">
+        <input type="text" id="descripcionResiduo" name="descripcionResiduo" [(ngModel)]="raeeabuscar.DescripcionResiduo">
       </div>
     </div>
   </div>
@@ -39,7 +88,7 @@
         <label for="marca">Marca:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="marca" name="marca">
+        <input type="text" id="marca" name="marca" [(ngModel)]="raeeabuscar.Marca">
       </div>
     </div>
     <div class="filtro-item">
@@ -47,7 +96,7 @@
         <label for="modelo">Modelo:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="modelo" name="modelo">
+        <input type="text" id="modelo" name="modelo" [(ngModel)]="raeeabuscar.Modelo">
       </div>
     </div>
     <div class="filtro-item">
@@ -55,15 +104,7 @@
         <label for="peso">Peso:</label>
       </div>
       <div class="input-container">
-        <input type="text" id="peso" name="peso">
-      </div>
-    </div>
-    <div class="filtro-item">
-      <div class="label-container">
-        <label for="descripcionResiduo">Descripción del Residuo:</label>
-      </div>
-      <div class="input-container">
-        <input type="text" id="descripcionResiduo" name="descripcionResiduo">
+        <input type="text" id="peso" name="peso" [(ngModel)]="raeeabuscar.Peso">
       </div>
     </div>
   </div>
